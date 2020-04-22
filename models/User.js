@@ -7,6 +7,14 @@ const UserSchema = new mongoose.Schema({
         type: String
     },
     profilePicture: String,
+    email: {
+        type: String,
+        required: true
+    },
+    password: {
+        type: String,
+        required: true
+    },
     dateJoined: Date,
     currentCity: String,
     posts: [Post.schema]
