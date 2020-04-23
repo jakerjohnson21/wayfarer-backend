@@ -1,12 +1,12 @@
 {
+  "scripts": {
+    "start": "node server",
+    "dev": "nodemon server"
+  },
   "name": "wayfarer-backend",
   "version": "1.0.0",
   "description": "Yay",
   "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jakerjohnson21/wayfarer-backend.git"
@@ -16,5 +16,18 @@
   "bugs": {
     "url": "https://github.com/jakerjohnson21/wayfarer-backend/issues"
   },
-  "homepage": "https://github.com/jakerjohnson21/wayfarer-backend#readme"
+  "homepage": "https://github.com/jakerjohnson21/wayfarer-backend#readme",
+  "dependencies": {
+    "bcrypt": "^4.0.1",
+    "body-parser": "^1.19.0",
+    "connect-mongo": "^3.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "mongoose": "^5.9.10",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.3"
+  },
+  "devDependencies": {}
 }
