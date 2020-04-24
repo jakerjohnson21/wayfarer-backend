@@ -15,7 +15,10 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    dateJoined: Date,
+    dateJoined:{
+        type: Date,
+        default: Date.now
+    },
     currentCity: String,
     posts: [Post.schema]
 });

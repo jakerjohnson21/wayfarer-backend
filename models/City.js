@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const Post = require("./Post.js");
 
 const CitySchema = new mongoose.Schema({
