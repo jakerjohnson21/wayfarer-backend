@@ -20,7 +20,10 @@ const UserSchema = new mongoose.Schema({
         default: Date.now
     },
     currentCity: String,
-    posts: [Post.schema]
+    posts: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Post'
+    }]
 });
 
 const User = mongoose.model("User", UserSchema);
