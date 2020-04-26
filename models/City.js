@@ -7,7 +7,10 @@ const CitySchema = new mongoose.Schema({
         required: true
     },
     picture: String,
-    linkedPosts: [Post.schema]
+    linkedPosts: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Post'
+    }]
 });
 
 const City = mongoose.model('City', CitySchema);

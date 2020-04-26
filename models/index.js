@@ -13,4 +13,4 @@ mongoose.connect(dbUrl, {
 
 
 // TODO: export the User
-module.exports = { User: require('./User') }
+module.exports = { User: require('./User'), City: require('./City'), Post: require('./Post') }
