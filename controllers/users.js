@@ -18,17 +18,12 @@ const show = (req, res) => {
     })
 }
 
-const findAllPosts = (req, res) => {
-    db.Post.find({}, (err, allGames) => {
-      if (err) {
-        return res.status(400).json({status: 500, error: 'Please try again'});
-      }
+
+const update = (req, res) => {
   
-      res.json(allGames);
-    });
-  };
+};
 
 module.exports = {
-    show, 
-    findAllPosts
+    show,  
+    update
 }
