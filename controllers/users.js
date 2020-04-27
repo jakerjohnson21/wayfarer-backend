@@ -19,26 +19,42 @@ const show = (req, res) => {
 }
 
 const update = (req, res) => {
-  db.User.findById(req.params.userId, (err, foundUser) => {
-    if(err) {
-      return res.status(400).json({status: 400, error: 'User not found!'})
-    }
+  db.User.findByIdAndUpdate(req.params.userId , {name: req.body.name} , (err, updatedUser) => {
+      if(err) {
+        return res.status(400).json({status: 400, message: "User not found!"})
+      }
 
-    foundUser.name = req.body.name;
-    //foundUser.city = req.body.city;
+      else {
+        res.status(200).json({data: updatedUser, message: "User updated!"})
+      }
 
-    foundUser.save((err, savedUser) => {
-          if (err) {
-            return res.status(400).json({status: 400, error: 'Your change was not saved!'});
-          }
+
     })
-
-    res.json(foundUser)
-  })
-
-};
+  }
 
 module.exports = {
     show,  
-    update
+    update,
 }
+
+//{name: String(req.body.name)}
+
+
+  // db.User.findById(req.params.userId, (err, foundUser) => {
+  //   if(err) {
+  //     return res.status(400).json({status: 400, error: 'User not found!'})
+  //   }
+
+  //   foundUser.name = req.body.name;
+  //   //foundUser.city = req.body.city;
+
+  //   foundUser.save((err, savedUser) => {
+  //         if (err) {
+  //           return res.status(400).json({status: 400, error: 'Your change was not saved!'});
+  //         }
+
+  //         res.status(200).json({
+  //           data: savedUser
+  //         })
+  //   })
+  // })

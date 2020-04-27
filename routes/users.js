@@ -6,6 +6,6 @@ const ctrl = require('../controllers')
 
 // get the user's profile using their ID
 router.get('/:id', ctrl.users.show)
-router.put('/update/:id', ctrl.users.update)
+router.put('/update/:userId', ctrl.users.update)
 
 module.exports = router;
