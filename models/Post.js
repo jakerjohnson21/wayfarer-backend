@@ -5,7 +5,14 @@ const PostSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    author: String,
+    author: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+    },
+    city: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'City'
+    },
     content: String
 });
 
