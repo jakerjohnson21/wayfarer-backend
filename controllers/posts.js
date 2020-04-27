@@ -16,6 +16,17 @@ const all = (req, res) => {
     });
   };
 
+const show = (req, res) => {
+  db.Post.findById(req.params.id, (err, foundPost) => {
+    if (err) {
+      return res.status(400).json({status: 500, error: 'Please try again'});
+    }
+
+    res.json(foundUser);
+  })
+};
+
+
   module.exports = {
     all
 }
