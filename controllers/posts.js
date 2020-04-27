@@ -22,7 +22,7 @@ const show = (req, res) => {
       return res.status(400).json({status: 500, error: 'Please try again'});
     }
 
-    res.json(foundUser);
+    res.json(foundPost);
   })
 };
 
