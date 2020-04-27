@@ -16,17 +16,29 @@ const all = (req, res) => {
     });
   };
 
+const getUserPosts = (req, res) => {
+  db.Post.find({author: req.params.userId}, (err, foundPosts) => {
+    if (err) {
+      return res.status(400).json({status: 500, error: 'Please try again'});
+    }
+
+    res.json(foundPosts);
+  });
+}
+
 const show = (req, res) => {
-  db.Post.findById(req.params.id, (err, foundPost) => {
+  db.Post.findById(req.params.postId, (err, foundPost) => {
     if (err) {
       return res.status(400).json({status: 500, error: 'Please try again'});
     }
 
     res.json(foundPost);
-  })
+  });
 };
 
 
   module.exports = {
-    all
-}
+    all,
+    getUserPosts,
+    show
+  }

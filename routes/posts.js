@@ -6,6 +6,8 @@ const ctrl = require('../controllers')
 
 // get the user's profile using their ID
 router.get('/', ctrl.posts.all)
-router.get('/posts/:postId', ctrl.posts.show)
+router.get('/:userId', ctrl.posts.getUserPosts)
+router.get('/:postId', ctrl.posts.show)
+
 
 module.exports = router;

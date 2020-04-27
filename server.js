@@ -45,7 +45,7 @@ app.get('/', (req, res) => {
     res.send(`<h1>Wayfarer</h1>`)
 })
 
-app.use('/api/v1/users', routes.users)
+app.use('/api/v1/user', routes.users)
 app.use('/api/v1/auth', routes.auth)
 app.use('/api/v1/posts', routes.posts)
 
