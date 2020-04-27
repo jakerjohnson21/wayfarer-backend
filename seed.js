@@ -37,25 +37,25 @@ const posts = [
     {
         title: 'San Diego sucks',
         author: "5ea37a5a7207c1cf4f10a89c",
-        city: ,
+        city: '',
         content: 'stuff stuff sstuffsf sfdsijnvapdokg vjepgviojqepfv iqehv peqjnv pqeuv npeq iuverpu'
     },
     {
         title: 'San Francisco is kinda cool',
         author: "5ea37a5a7207c1cf4f10a89c",
-        city: ,
+        city: '',
         content: 'Stuff Stuff stuff'
     },
     {
         title: 'San Fran is poop',
         author: "5ea37a5a7207c1cf4f10a89c",
-        city: ,
+        city: '',
         content: 'I am actually great with old women. In fact, for the longest time my best friend was my grandmother. And then she met Harriet. And now she thinks she better than everybody.'
     },
     {
         title: 'Seattle is rainy',
         author: "5ea37a5a7207c1cf4f10a89c",
-        city: ,
+        city: '',
         content: "Business to business. The old fashion way. No blackberries. No websites. I would like to see a website deliver baskets of food to people."
     },
 ]
