@@ -29,16 +29,31 @@ const getUserPosts = (req, res) => {
 const show = (req, res) => {
   db.Post.findById(req.params.postId, (err, foundPost) => {
     if (err) {
-      return res.status(400).json({status: 500, error: 'Please try again'});
+      return res.status(400).json({status: 500, error: 'Show post by ID failed.'});
     }
 
     res.json(foundPost);
   });
 };
 
+//****** 
+
+const createPost = (req, res) => {
+  console.log(req.body);
+  db.Post.create({title: req.body.title, content: req.body.content, author: req.body.author}, (err, newPost) => {
+    if (err) {
+      console.log(err);
+      return res.status(400).json({status: 500, error: 'Create post failed.'});
+    }
+
+    res.json(newPost)
+  })
+}
+
 
   module.exports = {
     all,
     getUserPosts,
-    show
+    show,
+    createPost
   }

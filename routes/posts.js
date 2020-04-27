@@ -9,5 +9,7 @@ router.get('/', ctrl.posts.all)
 router.get('/:userId', ctrl.posts.getUserPosts)
 router.get('/:postId', ctrl.posts.show)
 
+router.post('/', ctrl.posts.createPost)
+
 
 module.exports = router;
