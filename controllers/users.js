@@ -19,7 +19,7 @@ const show = (req, res) => {
 }
 
 const update = (req, res) => {
-  db.User.findByIdAndUpdate(req.params.userId , {name: req.body.name} , (err, updatedUser) => {
+  db.User.findByIdAndUpdate(req.params.userId , {name: req.body.name, city: req.body.city} , (err, updatedUser) => {
       if(err) {
         return res.status(400).json({status: 400, message: "User not found!"})
       }

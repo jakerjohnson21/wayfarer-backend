@@ -27,6 +27,7 @@ const getUserPosts = (req, res) => {
 }
 
 const show = (req, res) => {
+  console.log(req.params.postId)
   db.Post.findById(req.params.postId, (err, foundPost) => {
     if (err) {
       return res.status(400).json({status: 500, error: 'Show post by ID failed.'});
