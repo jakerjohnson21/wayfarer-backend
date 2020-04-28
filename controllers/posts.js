@@ -41,7 +41,7 @@ const show = (req, res) => {
 
 const createPost = (req, res) => {
   console.log(req.body);
-  db.Post.create({title: req.body.title, content: req.body.content, author: req.body.author}, (err, newPost) => {
+  db.Post.create(req.body, (err, newPost) => {
     if (err) {
       console.log(err);
       return res.status(400).json({status: 500, error: 'Create post failed.'});
@@ -51,10 +51,20 @@ const createPost = (req, res) => {
   })
 }
 
+const getCityPosts = (req, res) => {
+  db.Post.find({city: req.params.cityId}, (err, foundPosts) => {
+    if (err) {
+      return res.status(400).json({status: 500, error: 'Please try again'});
+    }
+
+    res.json(foundPosts);
+  });
+}
 
   module.exports = {
     all,
     getUserPosts,
     show,
-    createPost
+    createPost,
+    getCityPosts
   }

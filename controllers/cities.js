@@ -15,11 +15,19 @@ const all = (req, res) => {
 const getCity = (req, res) => {
     db.City.findById(req.params.cityId, (err, foundCity) => {
         if (err) return res.status(400).json({status: 400, message: "City not found."})
+<<<<<<< HEAD
+=======
+
+>>>>>>> submaster
         res.json(foundCity);
     })
 }
 
 module.exports = {
     all,
+<<<<<<< HEAD
     getCity,
+=======
+    getCity
+>>>>>>> submaster
 }

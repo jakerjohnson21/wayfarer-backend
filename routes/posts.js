@@ -8,6 +8,7 @@ const ctrl = require('../controllers')
 router.get('/', ctrl.posts.all)
 router.get('/:userId', ctrl.posts.getUserPosts)
 router.get('/get/:postId', ctrl.posts.show)
+router.get('/city/:cityId', ctrl.posts.getCityPosts)
 
 router.post('/', ctrl.posts.createPost)
 
